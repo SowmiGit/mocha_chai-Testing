@@ -5,7 +5,7 @@
   "scripts": {
     "build": "if exist rmdir /q /s build && tsc",
     "build-windows": "tsc -p tsconfig.json && npm run-script build",
-    "test": "mocha src/test/tests.js"
+    "test": "mocha src/test/tests.ts"
   },
   "author": "",
   "license": "MIT",

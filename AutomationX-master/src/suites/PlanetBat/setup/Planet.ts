@@ -1,13 +1,14 @@
-import gql from 'graphql-tag';
-import ApolloClient from 'apollo-boost';
-const { gql } = require('apollo-server');
+import { ApolloClient, InMemoryCache } from 'apollo-boost';
+import { gql } from 'apollo-server';
+import { createHttpLink } from 'apollo-link-http';
 
-const client = new ApolloClient(
-   uri: 'https://swapi.co/api/';
-);
+export class PlanetData {
+   static client = new ApolloClient({
+      link: createHttpLink({ uri: 'https://swapi.co/api/' }),
+      cache: new InMemoryCache()
+   });
 
-export function Planet() {
-const planetData = gql`
+static planetData = gql`
   {
     get {
       name: String,
@@ -17,14 +18,18 @@ const planetData = gql`
       climate: String,
     }
   }`;
-}
- 
-client
-    .query ({
-        query : planetData
-})
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
 
- export default Planet;
- module.exports = planetData;
+    public static init() {
+      this.client
+         .query({
+            query: this.planetData
+         })
+         .then((data: any) => {
+            console.log(data)
+         })
+         .catch((error: any) => {
+            console.error(error)
+         });
+   } 
+}
+PlanetData.init(); 
