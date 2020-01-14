@@ -5,24 +5,39 @@
   "scripts": {
     "build": "if exist rmdir /q /s build && tsc",
     "build-windows": "tsc -p tsconfig.json && npm run-script build",
-    "test": "mocha src/test/tests.ts"
+    "test": "mocha src/test/tests.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server": "^2.9.16",
+    "apollo-server-core": "^2.9.16",
     "async": "3.1.0",
+    "chai-http": "^4.3.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
     "ts-promise": "2.1.0",
     "tsc": "^1.20150623.0",
     "tslint": "^5.16.0",
-    "typescript": "^2.9.2",
-    "typescript-collections": "1.3.2"
+    "typescript-collections": "1.3.2",
+    "ws": "^7.2.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.7",
+    "@types/jest": "^23.3.3",
     "@types/mocha": "5.2.7",
+    "@types/node": "^10.17.13",
     "chai": "^4.2.0",
+    "jest": "^23.6.0",
     "mocha": "^6.2.2",
-    "ts-node": "^8.5.4"
+    "ts-jest": "^23.10.4",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1"
   },
   "main": "test.js"
 }

@@ -1,2 +1,2 @@
 //require('./test/PeopleTest.js')
-require('./test/PlanetTest.ts');
+require('./test/PlanetTest.js');
