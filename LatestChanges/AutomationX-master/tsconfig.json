@@ -1,0 +1,16 @@
+{
+   "type": "node",
+   "request": "launch",
+   "name": "Launch Program",
+   "lib": ["es6"],
+   "runtimeArgs": [
+       "-r",
+       "ts-node/register"
+   ],
+   "args": [
+       "${../../../../../src/libraries/libraries-gql-util/v1/util/GraphQLUtil.ts}"
+   ],
+   "compilerOptions": {
+    "skipLibCheck": true
+    }  
+}
