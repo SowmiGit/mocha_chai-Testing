@@ -35,7 +35,7 @@ export class users {
                resolve(data)
             })
             .catch((error: any) => {
-              // console.error(error)
+               console.error(error)
                reject(error);
             });
       });
